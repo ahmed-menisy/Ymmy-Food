@@ -103,7 +103,7 @@ function selectArea(btn) {
 
       // Search Event by Title
       $("#searchTitle").on("input", function () {
-         this.value = this.value.slice(0, 1);
+         this.value = this.value.length > 0 ? this.value.slice(0, 1) : "m";
 
          getSearch(this.value, "https://www.themealdb.com/api/json/v1/1/search.php?f=", "contentArea");
       });
@@ -289,6 +289,7 @@ async function getSearch(meal, url, section) {
    const ApiResult = await fetch(`${url}${meal}`);
 
    const listData = (await ApiResult.json()).meals;
+
    setTimeout(() => {
       $(".loading").addClass("d-none");
    }, 300);
