@@ -285,10 +285,13 @@ Enter valid email. *Ex: xxx@yyy.zzz
 
 // Get Api By Name and By Title
 async function getSearch(meal, url, section) {
+   $(".loading").removeClass("d-none");
    const ApiResult = await fetch(`${url}${meal}`);
 
    const listData = (await ApiResult.json()).meals;
-
+   setTimeout(() => {
+      $(".loading").addClass("d-none");
+   }, 300);
    displayMeals(listData, section);
 }
 
