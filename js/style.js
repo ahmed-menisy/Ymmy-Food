@@ -103,9 +103,9 @@ function selectArea(btn) {
 
       // Search Event by Title
       $("#searchTitle").on("input", function () {
-         this.value = this.value.length > 0 ? this.value.slice(0, 1) : "m";
+         this.value = this.value.length > 0 ? this.value.slice(0, 1) : "";
 
-         getSearch(this.value, "https://www.themealdb.com/api/json/v1/1/search.php?f=", "contentArea");
+         getSearch(this.value.length > 0 ? this.value : "m", "https://www.themealdb.com/api/json/v1/1/search.php?f=", "contentArea");
       });
    } else if (btn == "Categories") {
       getCategory();
