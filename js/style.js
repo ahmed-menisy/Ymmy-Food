@@ -82,7 +82,7 @@ function selectArea(btn) {
           <input
             type="search"
             class="form-control"
-            placeholder="Search By Title ..."
+            placeholder="Search By One Letter ..."
             id="searchTitle"
           />
         </div>
